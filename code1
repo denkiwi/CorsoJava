@@ -1,0 +1,54 @@
+<%@page import="java.util.*"%>
+<%@ include file="navbar.html"%>
+<%@ page import="contacts.*" %>
+ <div class="container">
+      
+  <table style="margin-top:100px;" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Number</th>
+        <th>Date of Birth</th>
+        <th>#</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+<% 
+
+
+
+	
+	
+	 ContactsDao c = new ContactsDao();
+	 c.getAllContacts();
+	 for ( MyContacts cnt : c.contacts) {
+		 out.println("<tr>");
+			out.println("<th>");out.println(cnt.getNome());out.println("</th>");
+			out.println("<th>");out.println(cnt.getCognome());out.println("</th>");
+			out.println("<th>");out.println(cnt.getTelefono());out.println("</th>");
+			out.println("<th>");out.println(cnt.getNascita());out.println("</th>");
+			out.println("<th>");out.println("<button class='btn btn-danger'>Modifica</button>");out.println("</th>");
+			
+		out.println("</tr>");
+		
+			
+		}
+	
+	
+	
+
+
+
+
+
+%>
+ </tbody>
+  </table>
+</div>
+
+
+
+
+<%@ include file="footer.html"%>
